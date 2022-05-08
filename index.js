@@ -18,7 +18,7 @@ client.once("ready", async () => {
         description: "TRN上でvalorantの統計情報を検索します．",
         options: [
             {
-                name: "in-game name",
+                name: "name",
                 description: "Valorantのゲーム内プレイヤ名を入力してください．",
                 required: true,
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING
@@ -43,7 +43,7 @@ client.on("interactionCreate", async (interaction) => {
     const { commandName, options } = interaction;
 
     if (interaction.commandName === 'searchvalo') {
-        const name = options.getString('in-game name');
+        const name = options.getString('name');
         const tag = options.getInteger('TAG');
         await interaction.reply({
             content: 'in-game ID is' + name + '#' + toString(tag),
