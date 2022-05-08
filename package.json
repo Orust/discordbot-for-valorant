@@ -1,0 +1,22 @@
+{
+  "name": "discordmatching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/discordmatching.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "17.x"
+  },
+  "dependencies": {
+    "discord.js": "^13.6.0"
+  }
+}
