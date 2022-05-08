@@ -46,7 +46,7 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         await interaction.reply({
-            content: 'in-game ID is' + name + '#' + toString(tag),
+            content: 'in-game ID is' + name + '#' + tag,
             ephemeral: true
         });
     }
