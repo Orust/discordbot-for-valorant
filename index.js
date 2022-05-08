@@ -1,7 +1,5 @@
 const { Client, Intents } = require('discord.js');
 
-dotenv.config();
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once("ready", async () => {
