@@ -24,7 +24,7 @@ client.once("ready", async () => {
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING
             },
             {
-                name: "TAG",
+                name: "tag",
                 description: "Valorantのゲーム内TAG(#の後ろの数字)を入力してください．",
                 required: true,
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.INTEGER
@@ -44,7 +44,7 @@ client.on("interactionCreate", async (interaction) => {
 
     if (interaction.commandName === 'search') {
         const name = options.getString('name');
-        const tag = options.getInteger('TAG');
+        const tag = options.getInteger('tag');
         await interaction.reply({
             content: 'in-game ID is' + name + '#' + toString(tag),
             ephemeral: true
