@@ -14,7 +14,7 @@ client.once("ready", async () => {
     }];
     */
     const data = [{
-        name: "searchvalo",
+        name: "search",
         description: "TRN上でvalorantの統計情報を検索します．",
         options: [
             {
@@ -42,7 +42,7 @@ client.on("interactionCreate", async (interaction) => {
 
     const { commandName, options } = interaction;
 
-    if (interaction.commandName === 'searchvalo') {
+    if (interaction.commandName === 'search') {
         const name = options.getString('name');
         const tag = options.getInteger('TAG');
         await interaction.reply({
