@@ -30,7 +30,7 @@ client.once("ready", async () => {
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.INTEGER
             }
         ]
-    }]
+    }];
     await client.application.commands.set(data);
     console.log("Ready!");
 });
