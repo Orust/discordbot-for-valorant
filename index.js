@@ -1,6 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
+var {pyshell} = require('python-shell');
 
 dotenv.config();
 
@@ -40,7 +41,7 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         await interaction.reply({
-            content: 'in-game ID is' + name + '#' + tag,
+            content: 'in-game ID is ' + name + '#' + tag,
             ephemeral: true
         });
     }
