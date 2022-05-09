@@ -7,12 +7,6 @@ dotenv.config();
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once("ready", async () => {
-    /*
-    const data = [{
-        name: "ping",
-        description: "Replies with Pong!",
-    }];
-    */
     const data = [{
         name: "search",
         description: "TRN上でvalorantの統計情報を検索します。",
@@ -50,16 +44,6 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: true
         });
     }
-    /*
-    if (interaction.commandName === 'ping') {
-        await interaction.reply({ content: 'Pong!', ephemeral: true });
-    }
-    */
 });
 
-client.login(process.env.DISCORD_TOKEN);
-
-/*
-client.login()
-  .catch(console.error)
-*/
+client.login(process.env.TOKEN);
