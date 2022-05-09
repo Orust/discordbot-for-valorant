@@ -1,7 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
-var {pyshell} = require('python-shell');
+var {PythonShell} = require('python-shell');
 
 dotenv.config();
 
@@ -40,8 +40,16 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === 'search') {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
+        const id = name + '#' + tag;
+
+        var pyshell = new PythonShell('search.py');
+        pyshell.send(id);
+        pyshell.on('message', function (data){
+            console.log(data);
+        });
+
         await interaction.reply({
-            content: 'in-game ID is ' + name + '#' + tag,
+            content: 'in-game ID is ' + id,
             ephemeral: true
         });
     }
