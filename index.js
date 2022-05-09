@@ -15,17 +15,17 @@ client.once("ready", async () => {
     */
     const data = [{
         name: "search",
-        description: "TRN上でvalorantの統計情報を検索します．",
+        description: "TRN上でvalorantの統計情報を検索します。",
         options: [
             {
                 name: "name",
-                description: "Valorantのゲーム内プレイヤ名を入力してください．",
+                description: "Valorantのゲーム内プレイヤ名を入力してください。",
                 required: true,
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING
             },
             {
                 name: "tag",
-                description: "Valorantのゲーム内TAG(#の後ろの数字)を入力してください．",
+                description: "Valorantのゲーム内TAG(#の後ろの数字)を入力してください。",
                 required: true,
                 type: DiscordJS.Constants.ApplicationCommandOptionTypes.INTEGER
             }
