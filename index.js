@@ -41,17 +41,16 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        const pythondata = '';
 
         var pyshell = new PythonShell('search.py');
         pyshell.send(id);
         pyshell.on('message', function (data) {
             console.log(data);
-            pythondata = data;
+            console.log(typeof(data));
         });
 
         await interaction.reply({
-            content: 'test in-game ID is ' + id + ', ' + pythondata,
+            content: 'test in-game ID is ' + id,
             ephemeral: true
         });
     }

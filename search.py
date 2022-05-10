@@ -8,4 +8,4 @@ import sys
 
 data = sys.stdin.readline()
 
-print(data + ' in python. test import and add two file')
+print(data + ' in python.')
