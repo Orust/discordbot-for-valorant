@@ -51,17 +51,10 @@ client.on("interactionCreate", async (interaction) => {
             pydata = data;
         });
 
-        if (pydata != 'before') {
-            await interaction.reply({
-                content: 'test in-game ID is ' + id + ', ' + pydata,
-                ephemeral: true
-            });
-        } else {
-            await interaction.reply({
-                content: 'data = null',
-                ephemeral: true
-            })
-        }
+        interaction.reply({
+            content: 'test in-game ID is ' + id + ', ' + pydata,
+            ephemeral: true
+        });
     }
 });
 
