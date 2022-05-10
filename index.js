@@ -48,14 +48,14 @@ client.on("interactionCreate", async (interaction) => {
         pyshell.send(id);
         pyshell.on('message', function (data) {
             pydata = data;
-            console.log(data);
+            console.log(data); 
 
-            await interaction.reply({
+            interaction.reply({
                 content: 'test in-game ID is ' + id + ', ' + pydata,
                 ephemeral: true
             });
         });
-
+        
         
     }
 });
