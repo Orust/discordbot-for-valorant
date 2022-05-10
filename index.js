@@ -47,7 +47,7 @@ client.on("interactionCreate", async (interaction) => {
         pyshell.send(id);
         pyshell.on('message', function (data) {
             console.log(data);
-            pythondta = data;
+            pythondata = data;
         });
 
         await interaction.reply({
