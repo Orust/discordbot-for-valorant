@@ -42,18 +42,26 @@ client.on("interactionCreate", async (interaction) => {
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
         let pydata = 'before';
-
         var pyshell = new PythonShell('search.py');
+        
         pyshell.send(id);
+
         pyshell.on('message', function (data) {
             console.log(data);
             pydata = data;
         });
 
-        await interaction.reply({
-            content: 'test in-game ID is ' + id + ', ' + pydata,
-            ephemeral: true
-        });
+        if (pydata != 'before') {
+            await interaction.reply({
+                content: 'test in-game ID is ' + id + ', ' + pydata,
+                ephemeral: true
+            });
+        } else {
+            await interaction.reply({
+                content: 'data = null',
+                ephemeral: true
+            })
+        }
     }
 });
 
