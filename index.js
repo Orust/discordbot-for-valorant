@@ -40,18 +40,19 @@ client.on("interactionCreate", async (interaction) => {
     if (interaction.commandName === 'search') {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
-        const id = name + '#' + tag;
-        let pydata = 'before';
+        
+        let pydata;
         var pyshell = new PythonShell('search.py');
         
-        pyshell.send(id);
-
+        pyshell.send(name + '#' + tag);
         pyshell.on('message', function (data) {
             console.log(data);
             pydata = data;
         });
+        
+        const id = name + '#' + tag;
 
-        interaction.reply({
+        await interaction.reply({
             content: 'test in-game ID is ' + id + ', ' + pydata,
             ephemeral: true
         });
