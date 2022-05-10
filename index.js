@@ -44,7 +44,7 @@ client.on("interactionCreate", async (interaction) => {
 
         var pyshell = new PythonShell('search.py');
         pyshell.send(id);
-        pyshell.on('message', function (data){
+        pyshell.on('message', function (data) {
             console.log(data);
         });
 
