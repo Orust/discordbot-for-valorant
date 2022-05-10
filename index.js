@@ -30,7 +30,7 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-client.on("interactionCreate", async () => {
+client.on("interactionCreate", async (interaction) => {
     if (!interaction.isCommand()) {
         return;
     }
@@ -41,20 +41,22 @@ client.on("interactionCreate", async () => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
+
         var pyshell = new PythonShell('search.py');
         var pydata;
         
         pyshell.send(id);
-
         pyshell.on('message', function (data) {
             pydata = data;
             console.log(data);
+
+            await interaction.reply({
+                content: 'test in-game ID is ' + id + ', ' + pydata,
+                ephemeral: true
+            });
         });
 
-        await interaction.reply({
-            content: 'test in-game ID is ' + id + ', ' + pydata,
-            ephemeral: true
-        });
+        
     }
 });
 
