@@ -49,7 +49,7 @@ client.on("interactionCreate", async (interaction) => {
         });
 
         await interaction.reply({
-            content: 'test in-game ID is ' + id,
+            content: 'test in-game ID is ' + id + ', ' + data,
             ephemeral: true
         });
     }
