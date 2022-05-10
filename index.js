@@ -30,24 +30,25 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-client.on("interactionCreate", async (interaction) => {
+client.on("interactionCreate", async () => {
     if (!interaction.isCommand()) {
         return;
     }
 
-    const { commandName, options, pyshell, pydata } = interaction;
+    const { commandName, options } = interaction;
 
     if (interaction.commandName === 'search') {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        pyshell = new PythonShell('search.py');
+        var pyshell = new PythonShell('search.py');
+        var pydata;
         
         pyshell.send(id);
 
         pyshell.on('message', function (data) {
-            console.log(data);
             pydata = data;
+            console.log(data);
         });
 
         await interaction.reply({
