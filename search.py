@@ -1,4 +1,14 @@
+import os
 import sys
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import db
+
+
+
+# cred = credentials.Certificate("./discord-valorant-matching-firebase-adminsdk-9gsja-2457bb54cd.json")
+# firebase_admin.initialize_app(cred)
+
 # import pandas as pd
 
 # import requests
@@ -8,4 +18,6 @@ import sys
 
 data = sys.stdin.readline()
 
-print(data + ' in python.')
+dir = os.getcwd()
+
+print(data + ' in python.' + dir)
