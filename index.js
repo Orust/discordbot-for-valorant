@@ -30,7 +30,7 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-client.on("interactionCreate", async (interaction) => {
+client.on("interactionCreate", (interaction) => {
     if (!interaction.isCommand()) {
         return;
     }
