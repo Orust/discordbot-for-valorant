@@ -1,7 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
-var {PythonShell} = require('python-shell');
+const { PythonShell } = require('python-shell');
 
 dotenv.config();
 
@@ -30,7 +30,9 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-client.on("interactionCreate", (interaction) => {
+client.on("interactionCreate", async (interaction) => {
+    console.log(interaction);
+
     if (!interaction.isCommand()) {
         return;
     }
@@ -42,13 +44,13 @@ client.on("interactionCreate", (interaction) => {
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
 
-        var pyshell = new PythonShell('search.py');
-        var pydata;
+        const pyshell = new PythonShell('search.py');
+        let pydata;
         
         pyshell.send(id);
         pyshell.on('message', function (data) {
             pydata = data;
-            console.log(data); 
+            console.log(data);
 
             interaction.reply({
                 content: 'test in-game ID is ' + id + ', ' + pydata,
