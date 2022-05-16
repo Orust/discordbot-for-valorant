@@ -1,8 +1,9 @@
-import os
 import sys
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import db
+
+# import os
+# import firebase_admin
+# from firebase_admin import credentials
+# from firebase_admin import db
 
 
 
@@ -18,6 +19,6 @@ from firebase_admin import db
 
 data = sys.stdin.readline()
 
-dir = os.getcwd()
+# dir = os.getcwd()
 
-print(data + ' in python.' + dir)
+print(data + ' in python.')
