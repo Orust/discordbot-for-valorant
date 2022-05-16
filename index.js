@@ -46,19 +46,17 @@ client.on("interactionCreate", async (interaction) => {
 
         const pyshell = new PythonShell('search.py');
         let pydata;
-        
         pyshell.send(id);
-        pyshell.on('message', async function (data) {
+        
+        pyshell.on('message', function (data) {
             pydata = data;
             console.log(data);
-
-            await interaction.reply({
+            
+            interaction.reply({
                 content: 'test in-game ID is ' + id + ', ' + pydata,
                 ephemeral: true
             });
         });
-        
-        
     }
 });
 
