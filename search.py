@@ -1,7 +1,7 @@
 import sys, pprint
 
 # import os
-# import firebase_admin
+import firebase_admin
 # from firebase_admin import credentials
 # from firebase_admin import db
 
@@ -22,5 +22,5 @@ data = sys.stdin.readline()
 # dir = os.getcwd()
 
 pprint.pprint(sys.path)
-pprint.pprint(sys.platform)
+pprint.pprint(sys.platform) # linux
 print(data + ' in python test.')
