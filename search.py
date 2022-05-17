@@ -21,4 +21,4 @@ data = sys.stdin.readline()
 
 # dir = os.getcwd()
 
-print(data + ' in python.')
+print(data + ' in python.' + sys.path)
