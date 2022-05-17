@@ -22,4 +22,5 @@ data = sys.stdin.readline()
 # dir = os.getcwd()
 
 pprint.pprint(sys.path)
+pprint.pprint(sys.platform)
 print(data + ' in python test.')
