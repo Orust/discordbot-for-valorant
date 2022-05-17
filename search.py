@@ -1,4 +1,4 @@
-import sys
+import sys, pprint
 
 # import os
 # import firebase_admin
@@ -21,4 +21,5 @@ data = sys.stdin.readline()
 
 # dir = os.getcwd()
 
+pprint.pprint(sys.path)
 print(data + ' in python test.')
