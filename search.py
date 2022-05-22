@@ -13,7 +13,7 @@ import sys, pprint
 # import pandas as pd
 
 # import requests
-# from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 # import urllib.parse as parse
 
 
