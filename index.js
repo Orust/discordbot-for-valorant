@@ -57,10 +57,7 @@ client.on("interactionCreate", async (interaction) => {
             pydata = data;
             console.log(data);
             
-            interaction.reply({
-                content: 'test in-game ID is ' + id + ', ' + pydata,
-                ephemeral: true
-            });
+            
         });
 
         await sleep(5000)
