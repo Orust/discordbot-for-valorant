@@ -6,7 +6,7 @@ import sys, pprint
 
 # import pandas as pd
 
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import urllib.request
 import urllib.parse as parse
 
@@ -19,7 +19,7 @@ input_name = sys.argv[1]
 print(input_name + ' in python test.')
 
 
-
+"""
 user_name = parse.quote(input_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
@@ -44,6 +44,8 @@ for i in range(len(name_class)):
 for i in range(len(stat_class)):
     if i % 6 == 0:
         matches.append(int(stat_class[i].get_text()))
+"""
+
 """
 # print(names)
 # print(matches)
