@@ -50,7 +50,7 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         let stats;
 
-        /*
+        
         let options = {
             mode: 'text',
             pythonPath: '/usr/bin/python',
@@ -59,6 +59,7 @@ client.on("interactionCreate", async (interaction) => {
             args: [id]
         }
 
+        /*
         PythonShell.run('search.py', options, function (err, results) {
             if (err) throw err;
             // results is an array consisting of messages collected during execution
