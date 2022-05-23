@@ -8,7 +8,7 @@ import sys, pprint
 
 # import pandas as pd
 
-import requests
+# import requests
 from bs4 import BeautifulSoup
 
 
