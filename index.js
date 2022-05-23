@@ -50,6 +50,7 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         let stats;
 
+        /*
         let options = {
             mode: 'text',
             pythonPath: '/usr/bin/python',
@@ -64,6 +65,7 @@ client.on("interactionCreate", async (interaction) => {
             console.log('results: %j', results);
             stats = results;
         });
+        */
         
 
         // await sleep(1000)
