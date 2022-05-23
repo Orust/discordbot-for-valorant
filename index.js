@@ -58,15 +58,15 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         let stats = 'before defined';
 
-        /*
-        options = {
+        
+        optionsPy = {
             mode: 'text',
             pythonPath: '/usr/bin/python',
             pythonOptions: ['-u'],
             scriptPath: '/app/',
             args: [id]
         }
-        */
+        
 
         // optionsPy[args] = id;
         
