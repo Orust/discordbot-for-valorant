@@ -68,7 +68,7 @@ client.on("interactionCreate", async (interaction) => {
         }
         */
 
-        optionsPy[args] = id;
+        // optionsPy[args] = id;
         
 
         /*
