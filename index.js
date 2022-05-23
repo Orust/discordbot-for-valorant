@@ -3,7 +3,7 @@ const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
 
-let options = {
+var optionsPy = {
     mode: 'text',
     pythonPath: '/usr/bin/python',
     pythonOptions: ['-u'],
@@ -67,6 +67,8 @@ client.on("interactionCreate", async (interaction) => {
             args: [id]
         }
         */
+
+        optionsPy[args] = id;
         
 
         /*
