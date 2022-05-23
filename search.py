@@ -10,13 +10,14 @@ from bs4 import BeautifulSoup
 import urllib.request
 import urllib.parse as parse
 
-data = sys.stdin.readline()
+# data = sys.stdin.readline()
 
 # pprint.pprint(sys.path)
 # pprint.pprint(sys.platform) # linux
-print(data + ' in python test.')
 
-input_name = data
+input_name = sys.argv[1]
+print(input_name + ' in python test.')
+
 
 
 user_name = parse.quote(input_name)

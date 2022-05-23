@@ -66,20 +66,16 @@ client.on("interactionCreate", async (interaction) => {
             scriptPath: '/app/',
             args: [id]
         }
-        
-
         // optionsPy[args] = id;
         
 
-        /*
-        PythonShell.run('search.py', options, function (err, results) {
+        
+        PythonShell.run('search.py', optionsPy, function (err, results) {
             if (err) throw err;
             // results is an array consisting of messages collected during execution
             console.log('results: %j', results);
             stats = results;
         });
-        */
-        
 
         // await sleep(1000)
         await interaction.reply({
