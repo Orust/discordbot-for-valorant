@@ -1,7 +1,15 @@
 const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
+const { PythonShell } = require('python-shell');
 
+let options = {
+    mode: 'text',
+    pythonPath: '/usr/bin/python',
+    pythonOptions: ['-u'],
+    scriptPath: '/app/',
+    args: ['test']
+}
 
 dotenv.config();
 
@@ -48,17 +56,17 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        let stats;
+        let stats = 'before defined';
 
-        const { PythonShell } = require('python-shell');
-
-        let options = {
+        /*
+        options = {
             mode: 'text',
             pythonPath: '/usr/bin/python',
             pythonOptions: ['-u'],
             scriptPath: '/app/',
             args: [id]
         }
+        */
         
 
         /*
@@ -73,7 +81,7 @@ client.on("interactionCreate", async (interaction) => {
 
         // await sleep(1000)
         await interaction.reply({
-            content: 'await line' + stats,
+            content: 'await line ' + stats,
             ephemeral: true
         });
     }
