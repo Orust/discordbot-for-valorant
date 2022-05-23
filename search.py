@@ -7,7 +7,8 @@ import sys, pprint
 # import pandas as pd
 
 from bs4 import BeautifulSoup
-import urllib.request
+# import urllib.request
+import requests
 import urllib.parse as parse
 
 # data = sys.stdin.readline()
@@ -25,9 +26,10 @@ print(user_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 
-
+"""
 html = urllib.request.urlopen(load_url)
 html2 = urllib.request.urlopen(load_url2)
+"""
 """
 soup = BeautifulSoup(html.content, "html.parser")
 soup_overview = BeautifulSoup(html2.content, "html.parser")
