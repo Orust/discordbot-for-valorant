@@ -14,10 +14,11 @@ data = sys.stdin.readline()
 
 # pprint.pprint(sys.path)
 # pprint.pprint(sys.platform) # linux
-# print(data + ' in python test.')
+print(data + ' in python test.')
 
 input_name = data
 
+"""
 user_name = parse.quote(input_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
@@ -47,3 +48,4 @@ for i in range(len(stat_class)):
 # print(matches)
 print(rank)
 # print(soup.find_all(class_="agent__stat"))
+"""
