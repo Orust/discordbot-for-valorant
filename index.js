@@ -5,6 +5,11 @@ const { PythonShell } = require('python-shell');
 
 dotenv.config();
 
+async function sleep(ms) {
+    return new Promise(r => setTimeout(r, ms));
+}
+
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once("ready", async () => {
@@ -57,6 +62,8 @@ client.on("interactionCreate", async (interaction) => {
                 ephemeral: true
             });
         });
+
+        await sleep(1000)
         await interaction.reply({
             content: 'await line',
             ephemeral: true
