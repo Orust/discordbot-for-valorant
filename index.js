@@ -3,6 +3,14 @@ const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
 
+let options = {
+    mode: 'text',
+    pythonPath: '/usr/bin/python',
+    pythonOptions: ['-u'],
+    scriptPath: '/app/',
+    args: ['test']
+}
+
 dotenv.config();
 
 async function sleep(ms) {
@@ -51,13 +59,7 @@ client.on("interactionCreate", async (interaction) => {
         let stats;
 
         
-        let options = {
-            mode: 'text',
-            pythonPath: '/usr/bin/python',
-            pythonOptions: ['-u'],
-            scriptPath: '/app/',
-            args: [id]
-        }
+        
 
         /*
         PythonShell.run('search.py', options, function (err, results) {
