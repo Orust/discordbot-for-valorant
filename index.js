@@ -5,7 +5,7 @@ const { PythonShell } = require('python-shell');
 
 var optionsPy = {
     mode: 'text',
-    pythonPath: '/usr/bin/python',
+    pythonPath: '/usr/bin/python3.8',
     pythonOptions: ['-u'],
     scriptPath: '/app/',
     args: ['test']
@@ -61,7 +61,7 @@ client.on("interactionCreate", async (interaction) => {
         
         optionsPy = {
             mode: 'text',
-            pythonPath: '/usr/bin/python',
+            pythonPath: '/usr/bin/python3.8',
             pythonOptions: ['-u'],
             scriptPath: '/app/',
             args: [id]
