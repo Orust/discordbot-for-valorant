@@ -33,18 +33,17 @@ name_class = soup.select('.agent__name-name')
 rank_class = soup_overview.select('.value')
 matches = []
 names = []
-print(name_class)
-print(rank_class)
+# print(name_class)
+# print(rank_class)
 rank = rank_class[0].get_text().strip()
 
-"""
 for i in range(len(name_class)):
     names.append(name_class[i].get_text())
 
 for i in range(len(stat_class)):
     if i % 6 == 0:
         matches.append(int(stat_class[i].get_text()))
-
+"""
 # print(names)
 # print(matches)
 print(rank)
