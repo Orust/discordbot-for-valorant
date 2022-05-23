@@ -4,13 +4,10 @@ import sys, pprint
 # from firebase_admin import credentials
 # from firebase_admin import db
 
-
-
 # import pandas as pd
 
-# import requests
 from bs4 import BeautifulSoup
-
+import requests
 
 data = sys.stdin.readline()
 
