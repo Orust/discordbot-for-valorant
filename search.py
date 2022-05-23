@@ -18,8 +18,9 @@ print(data + ' in python test.')
 
 input_name = data
 
-"""
+
 user_name = parse.quote(input_name)
+"""
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 html = urllib.request.urlopen(load_url)
@@ -47,5 +48,6 @@ for i in range(len(stat_class)):
 # print(names)
 # print(matches)
 print(rank)
+data = rank
 # print(soup.find_all(class_="agent__stat"))
 """
