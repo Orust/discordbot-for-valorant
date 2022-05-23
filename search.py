@@ -25,6 +25,7 @@ print(user_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 
+"""
 html = urllib.request.urlopen(load_url)
 html2 = urllib.request.urlopen(load_url2)
 
@@ -51,3 +52,4 @@ for i in range(len(stat_class)):
 print(rank)
 data = rank
 # print(soup.find_all(class_="agent__stat"))
+"""
