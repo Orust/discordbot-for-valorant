@@ -1,15 +1,7 @@
 const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
-const { PythonShell } = require('python-shell');
 
-let options = {
-    mode: 'text',
-    pythonPath: '/usr/bin/python',
-    pythonOptions: ['-u'],
-    scriptPath: '/app/',
-    args: ['test']
-}
 
 dotenv.config();
 
@@ -58,7 +50,9 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         let stats;
 
-        options = {
+        const { PythonShell } = require('python-shell');
+
+        let options = {
             mode: 'text',
             pythonPath: '/usr/bin/python',
             pythonOptions: ['-u'],
