@@ -58,7 +58,13 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         let stats;
 
-        
+        options = {
+            mode: 'text',
+            pythonPath: '/usr/bin/python',
+            pythonOptions: ['-u'],
+            scriptPath: '/app/',
+            args: [id]
+        }
         
 
         /*
