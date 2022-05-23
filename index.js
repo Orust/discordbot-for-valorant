@@ -48,21 +48,27 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
+        let stats;
 
-        const pyshell = new PythonShell('search.py');
-        let pydata;
-        pyshell.send(id);
-        
-        pyshell.on('message', function (data) {
-            pydata = data;
-            console.log(data);
-            
-            
+        let options = {
+            mode: 'text',
+            pythonPath: '/usr/bin/python',
+            pythonOptions: ['-u'],
+            scriptPath: '/app/search.py',
+            args: [id]
+        }
+
+        PythonShell.run('search.py', options, function (err, results) {
+            if (err) throw err;
+            // results is an array consisting of messages collected during execution
+            console.log('results: %j', results);
+            stats = results;
         });
+        
 
-        await sleep(2000)
+        // await sleep(1000)
         await interaction.reply({
-            content: 'await line',
+            content: 'await line' + stats,
             ephemeral: true
         });
     }
