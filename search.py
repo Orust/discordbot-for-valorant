@@ -29,7 +29,6 @@ load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview
 html = requests.get(load_url)
 html2 = requests.get(load_url2)
 
-"""
 soup = BeautifulSoup(html.content, "html.parser")
 soup_overview = BeautifulSoup(html2.content, "html.parser")
 stat_class = soup.select('.agent__stat')
@@ -53,4 +52,3 @@ for i in range(len(stat_class)):
 print(rank)
 data = rank
 # print(soup.find_all(class_="agent__stat"))
-"""
