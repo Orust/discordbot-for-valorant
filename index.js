@@ -79,7 +79,7 @@ client.on("interactionCreate", async (interaction) => {
 
         await sleep(1000)
         await interaction.reply({
-            content: 'await line ' + stats,
+            content: 'stats:' + stats,
             ephemeral: true
         });
     }

@@ -17,12 +17,12 @@ import urllib.parse as parse
 # pprint.pprint(sys.platform) # linux
 
 input_name = sys.argv[1]
-print(input_name + ' in python test.')
+# print(input_name + ' in python test.')
 
 
 
 user_name = parse.quote(input_name)
-print(user_name)
+# print(user_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 
@@ -47,8 +47,8 @@ for i in range(len(stat_class)):
     if i % 6 == 0:
         matches.append(int(stat_class[i].get_text()))
 
-# print(names)
-# print(matches)
+print(names)
+print(matches)
 print(rank)
 data = rank
 # print(soup.find_all(class_="agent__stat"))
