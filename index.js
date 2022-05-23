@@ -55,7 +55,7 @@ client.on("interactionCreate", async (interaction) => {
             mode: 'text',
             pythonPath: '/usr/bin/python',
             pythonOptions: ['-u'],
-            scriptPath: '/app/search.py',
+            scriptPath: '/app/',
             args: [id]
         }
 
