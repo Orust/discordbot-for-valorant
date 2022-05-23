@@ -19,16 +19,17 @@ input_name = sys.argv[1]
 print(input_name + ' in python test.')
 
 
-"""
+
 user_name = parse.quote(input_name)
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 
 html = urllib.request.urlopen(load_url)
 html2 = urllib.request.urlopen(load_url2)
+
 soup = BeautifulSoup(html.content, "html.parser")
 soup_overview = BeautifulSoup(html2.content, "html.parser")
-
+"""
 stat_class = soup.select('.agent__stat')
 name_class = soup.select('.agent__name-name')
 rank_class = soup_overview.select('.value')
