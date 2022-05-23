@@ -20,9 +20,9 @@ input_name = data
 
 
 user_name = parse.quote(input_name)
-"""
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
+"""
 html = urllib.request.urlopen(load_url)
 html2 = urllib.request.urlopen(load_url2)
 soup = BeautifulSoup(html.content, "html.parser")
