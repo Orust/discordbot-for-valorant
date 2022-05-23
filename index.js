@@ -53,7 +53,7 @@ client.on("interactionCreate", async (interaction) => {
             console.log(data);
             
             interaction.reply({
-                content: 'test in-game ID is ' + id + ', ' + pydata,
+                content: 'test in-game ID is ',
                 ephemeral: true
             });
         });
