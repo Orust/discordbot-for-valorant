@@ -63,7 +63,7 @@ client.on("interactionCreate", async (interaction) => {
             });
         });
 
-        await sleep(1000)
+        await sleep(5000)
         await interaction.reply({
             content: 'await line',
             ephemeral: true
