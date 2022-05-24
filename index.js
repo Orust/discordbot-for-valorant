@@ -109,7 +109,7 @@ client.on("interactionCreate", async (interaction) => {
         */
 
         // await sleep(1000);
-        await interaction.reply({
+        await interaction.deferReply({
             content: 'stats:' + stats,
             ephemeral: true
         });
