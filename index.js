@@ -77,7 +77,7 @@ client.on("interactionCreate", async (interaction) => {
             stats = results;
         });
 
-        await sleep(5000);
+        await sleep(2000);
         await interaction.reply({
             content: 'stats:' + stats,
             ephemeral: true
