@@ -48,7 +48,6 @@ async function runpyshell(id) {
     return results;
 }
 
-
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.once("ready", async () => {
