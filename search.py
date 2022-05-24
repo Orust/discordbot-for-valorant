@@ -38,7 +38,7 @@ matches = []
 names = []
 # print(name_class)
 # print(rank_class)
-rank = rank_class[0].get_text().strip()
+# rank = rank_class[0].get_text().strip()
 
 for i in range(len(name_class)):
     names.append(name_class[i].get_text())
@@ -49,6 +49,5 @@ for i in range(len(stat_class)):
 
 print(names)
 print(matches)
-print(rank)
-data = rank
+# print(rank)
 # print(soup.find_all(class_="agent__stat"))
