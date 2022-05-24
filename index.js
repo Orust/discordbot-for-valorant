@@ -35,17 +35,17 @@ async function runpyshell(id) {
                     if (err)
                     {
                         reject({ success: false, err });
-                        return null;
+                        return;
                     }
 
                     console.log('PythonShell results: %j', results);
 
                     resolve({ success: true, results });
-                    return results;
                 }
             );
         }
     );
+    return results;
 }
 
 
