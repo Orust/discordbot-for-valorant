@@ -18,11 +18,8 @@ import urllib.parse as parse
 
 input_name = sys.argv[1]
 # print(input_name + ' in python test.')
-
-
-
 user_name = parse.quote(input_name)
-# print(user_name)
+
 load_url = "https://tracker.gg/valorant/profile/riot/" + user_name + "/agents?playlist=competitive&season=all"
 load_url2 = "https://tracker.gg/valorant/profile/riot/" + user_name + "/overview?playlist=competitive&season=all"
 
