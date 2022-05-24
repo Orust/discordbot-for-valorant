@@ -56,7 +56,7 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        let stats = 'before defined';
+        let stats;
 
         
         optionsPy = {
@@ -77,7 +77,7 @@ client.on("interactionCreate", async (interaction) => {
             stats = results;
         });
 
-        await sleep(1000)
+        await sleep(2000)
         await interaction.reply({
             content: 'stats:' + stats,
             ephemeral: true
