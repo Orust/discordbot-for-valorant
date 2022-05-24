@@ -17,6 +17,37 @@ async function sleep(ms) {
     return new Promise(r => setTimeout(r, ms));
 }
 
+async function runpyshell(id) {
+    optionsPy = {
+        mode: 'text',
+        pythonPath: '/usr/bin/python3.8',
+        pythonOptions: ['-u'],
+        scriptPath: '/app/',
+        args: [id]
+    }
+
+    const { success, err = '', results } = await new Promise(
+        (resolve, reject) =>
+        {
+            PythonShell.run('search.py', optionsPy,
+                function (err, results)
+                {
+                    if (err)
+                    {
+                        reject({ success: false, err });
+                        return null;
+                    }
+
+                    console.log('PythonShell results: %j', results);
+
+                    resolve({ success: true, results });
+                    return results;
+                }
+            );
+        }
+    );
+}
+
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -56,9 +87,8 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        let stats;
-
-        
+        const stats = runpyshell(id);
+        /*
         optionsPy = {
             mode: 'text',
             pythonPath: '/usr/bin/python3.8',
@@ -76,8 +106,9 @@ client.on("interactionCreate", async (interaction) => {
             console.log('results: %j', results);
             stats = results;
         });
+        */
 
-        await sleep(2000);
+        await sleep(1000);
         await interaction.reply({
             content: 'stats:' + stats,
             ephemeral: true
