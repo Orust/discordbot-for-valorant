@@ -87,7 +87,7 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        const stats = runpyshell(id);
+        const stats = await runpyshell(id);
         /*
         optionsPy = {
             mode: 'text',
@@ -108,7 +108,7 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
 
-        await sleep(1000);
+        // await sleep(1000);
         await interaction.reply({
             content: 'stats:' + stats,
             ephemeral: true
