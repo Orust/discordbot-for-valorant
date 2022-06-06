@@ -86,9 +86,10 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        // const stats = await runpyshell(id);
+        const stats = await runpyshell(id);
         
         // for debug python
+        /*
         let stats;
         
         optionsPy = {
@@ -106,8 +107,9 @@ client.on("interactionCreate", async (interaction) => {
             console.log('results: %j', results);
             stats = results;
         });
-
         await sleep(1200);
+        */
+
         await interaction.reply({
             content: 'stats:' + stats,
             ephemeral: true
