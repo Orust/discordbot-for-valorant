@@ -140,7 +140,8 @@ client.on("interactionCreate", async (interaction) => {
         snapshot.forEach(doc => {
             console.log(doc.id, '=>', doc.data());
         });
-        // pd.DataFrame([data]);
+        df = pd.DataFrame([data]);
+        console.log(df);
         
         await interaction.reply({
             content: 'stats:' + agents + time,
