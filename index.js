@@ -123,6 +123,7 @@ client.on("interactionCreate", async (interaction) => {
         */
        //#endregion
 
+        console.log(stats[0]);
         const docRef = db.collection('users').doc('alovelace');
         
         await docRef.set({
