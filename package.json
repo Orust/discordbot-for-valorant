@@ -20,6 +20,7 @@
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
+    "firebase-admin": "^10.3.0",
     "python-shell": "^3.0.1"
   }
 }

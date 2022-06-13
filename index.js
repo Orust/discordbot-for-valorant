@@ -2,6 +2,12 @@ const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
+const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
+const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+
+initializeApp();
+
+const db = getFirestore();
 
 var optionsPy = {
     mode: 'text',
@@ -88,7 +94,7 @@ client.on("interactionCreate", async (interaction) => {
         const id = name + '#' + tag;
         const stats = await runpyshell(id);
         
-        // for debug python
+        //#region for debug python
         /*
         let stats;
         
@@ -109,6 +115,15 @@ client.on("interactionCreate", async (interaction) => {
         });
         await sleep(1200);
         */
+       //#endregion
+
+        const docRef = db.collection('users').doc('alovelace');
+        
+        await docRef.set({
+            first: 'Ada',
+            last: 'Lovelace',
+            born: 1815
+        });
 
         await interaction.reply({
             content: 'stats:' + stats,
