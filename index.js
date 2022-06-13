@@ -133,7 +133,7 @@ client.on("interactionCreate", async (interaction) => {
         const res = await db.collection('users').doc(id).set(data);
 
         */
-        await interaction.reply({
+        await interaction.deferReply({
             content: 'stats:' + agents + time,
             ephemeral: true
         });
