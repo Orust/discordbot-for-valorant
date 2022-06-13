@@ -125,12 +125,14 @@ client.on("interactionCreate", async (interaction) => {
         */
        //#endregion
        
+       /*
         let data = {};
         for (let i = 0; i < agents.length; i++) {
             data[agents[i]] = time[i];
         }
         const res = await db.collection('users').doc(id).set(data);
 
+        */
         await interaction.reply({
             content: 'stats:' + agents + time,
             ephemeral: true
