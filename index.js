@@ -125,7 +125,7 @@ client.on("interactionCreate", async (interaction) => {
         */
        //#endregion
        
-        let data;
+        let data = {};
         for (let i = 0; i < agents.length; i++) {
             data[agents[i]] = time[i];
         }
