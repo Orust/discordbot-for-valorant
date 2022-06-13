@@ -2,6 +2,8 @@ const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
+const pd = require("node-pandas");
+
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
 var admin = require("firebase-admin");
@@ -133,7 +135,12 @@ client.on("interactionCreate", async (interaction) => {
             data[agents[i]] = time[i];
         }
         const res = await db.collection('users').doc(id).set(data);
-
+        const usersRef = db.collection('users');
+        const snapshot = await usersRef.get();
+        snapshot.forEach(doc => {
+            console.log(doc.id, '=>', doc.data());
+        });
+        // pd.DataFrame([data]);
         
         await interaction.reply({
             content: 'stats:' + agents + time,
