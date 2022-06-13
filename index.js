@@ -98,9 +98,11 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
-        const stats = await runpyshell(id);
-        const agents = stats[0];
-        const time = stats[1];
+        // const stats = await runpyshell(id);
+        // const agents = stats[0];
+        // const time = stats[1];
+        const agents = ["a", "b", "c"];
+        const time = [3, 2, 5];
         
         //#region for debug python
         /*
@@ -124,16 +126,16 @@ client.on("interactionCreate", async (interaction) => {
         await sleep(1200);
         */
        //#endregion
-       
-       /*
+
+        
         let data = {};
         for (let i = 0; i < agents.length; i++) {
             data[agents[i]] = time[i];
         }
         const res = await db.collection('users').doc(id).set(data);
 
-        */
-        await interaction.deferReply({
+        
+        await interaction.reply({
             content: 'stats:' + agents + time,
             ephemeral: true
         });
