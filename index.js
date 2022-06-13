@@ -99,6 +99,8 @@ client.on("interactionCreate", async (interaction) => {
         const tag = options.getInteger('tag');
         const id = name + '#' + tag;
         const stats = await runpyshell(id);
+        const agents = stats[0];
+        const time = stats[1];
         
         //#region for debug python
         /*
@@ -123,7 +125,6 @@ client.on("interactionCreate", async (interaction) => {
         */
        //#endregion
 
-        console.log(stats[0]);
         const docRef = db.collection('users').doc('alovelace');
         
         await docRef.set({
@@ -133,7 +134,7 @@ client.on("interactionCreate", async (interaction) => {
         });
 
         await interaction.reply({
-            content: 'stats:' + stats,
+            content: 'stats:' + agents + time,
             ephemeral: true
         });
     }
