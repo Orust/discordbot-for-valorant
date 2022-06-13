@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
 const pd = require('node-pandas');
 const scipy = require('scipy');
-const d3 = require('d3');
+// const d3 = require('d3');
 
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
