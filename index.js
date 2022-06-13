@@ -4,8 +4,14 @@ const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
+var admin = require("firebase-admin");
 
-initializeApp();
+var serviceAccount = require("/app/discord-valorant-matching-firebase-adminsdk-9gsja-02db5924bd.json");
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://discord-valorant-matching-default-rtdb.firebaseio.com"
+});
 
 const db = getFirestore();
 
