@@ -124,14 +124,12 @@ client.on("interactionCreate", async (interaction) => {
         await sleep(1200);
         */
        //#endregion
-
-        const docRef = db.collection('users').doc('alovelace');
-        
-        await docRef.set({
-            first: 'Ada',
-            last: 'Lovelace',
-            born: 1815
-        });
+       
+        const data = new Map();
+        for (let i = 0; i < agents.length; i++) {
+            data.set(agents[i], time[i]);
+        }
+        const res = await db.collection('user').doc(id).set(data);
 
         await interaction.reply({
             content: 'stats:' + agents + time,
