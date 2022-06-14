@@ -172,7 +172,7 @@ client.on("interactionCreate", async (interaction) => {
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-        channel.send({ embeds: [exampleEmbed] });
+        interaction.channel.send({ embeds: [exampleEmbed] });
         
         await interaction.reply({
             content: 'stats:' + agents + time,
