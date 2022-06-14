@@ -7,7 +7,9 @@ const { PythonShell } = require('python-shell');
 const { agnes } = require('ml-hclust');
 // const d3 = require('d3');
 // import * as d3 from 'd3';
-const d3 = await import("d3");
+// const d3 = await import("d3");
+import * as d3 from "https://cdn.skypack.dev/d3@7";
+const div = d3.selectAll("div");
 const { MessageEmbed } = require('discord.js');
 
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
