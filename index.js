@@ -9,9 +9,6 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
 const document = new JSDOM().window.document;
-jsdom.env({
-
-})
 
 // import * as d3 from 'd3';
 // const d3 = await import("d3");
