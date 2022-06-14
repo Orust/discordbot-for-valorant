@@ -2,8 +2,9 @@ const { Client, Intents } = require('discord.js');
 const DiscordJS = require('discord.js');
 const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
-const pd = require('node-pandas');
-const scipy = require('scipy');
+// const pd = require('node-pandas');
+// const scipy = require('scipy');
+const { agnes } = require('ml-hclust');
 // const d3 = require('d3');
 
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
@@ -63,6 +64,8 @@ async function runpyshell(id) {
     );
     return results;
 }
+
+
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -142,10 +145,12 @@ client.on("interactionCreate", async (interaction) => {
         snapshot.forEach(doc => {
             console.log(doc.id, '=>', doc.data());
         });
-        df = pd.DataFrame([data]);
-        console.log(df);
+        // df = pd.DataFrame([data]);
+        // console.log(df);
 
-        
+        const tree = agnes(data, {
+            method: 'ward',
+        })
         
         await interaction.reply({
             content: 'stats:' + agents + time,
