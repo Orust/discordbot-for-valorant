@@ -299,6 +299,7 @@ client.on("interactionCreate", async (interaction) => {
         const tree = agnes(data, {
             method: 'ward',
         })
+        dendrogram(tree, { h: 2.5 });
         
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
