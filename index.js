@@ -5,8 +5,9 @@ const { PythonShell } = require('python-shell');
 // const pd = require('node-pandas');
 // const scipy = require('scipy');
 const { agnes } = require('ml-hclust');
-const d3 = require('d3');
+// const d3 = require('d3');
 // import * as d3 from 'd3';
+const { MessageEmbed } = require('discord.js');
 
 const { initializeApp, applicationDefault, cert } = require('firebase-admin/app');
 const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestore');
@@ -152,6 +153,26 @@ client.on("interactionCreate", async (interaction) => {
         const tree = agnes(data, {
             method: 'ward',
         })
+        
+        const exampleEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle('Some title')
+            .setURL('https://discord.js.org/')
+            .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
+            .setDescription('Some description here')
+            .setThumbnail('https://i.imgur.com/AfFp7pu.png')
+            .addFields(
+                { name: 'Regular field title', value: 'Some value here' },
+                { name: '\u200B', value: '\u200B' },
+                { name: 'Inline field title', value: 'Some value here', inline: true },
+                { name: 'Inline field title', value: 'Some value here', inline: true },
+            )
+            .addField('Inline field title', 'Some value here', true)
+            .setImage('https://i.imgur.com/AfFp7pu.png')
+            .setTimestamp()
+            .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
+
+        channel.send({ embeds: [exampleEmbed] });
         
         await interaction.reply({
             content: 'stats:' + agents + time,
