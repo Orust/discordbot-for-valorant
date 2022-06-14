@@ -88,12 +88,13 @@ function dendrogram(data, options = {}) {
         strokeWidth: strokeWidth = 1
     } = options;
   
-    const svg = d3
-        .create("svg")
+    const svg = d3.create("svg:g");
+        /*
         .attr("width", width)
         .attr("height", height)
         .attr("viewBox", [0, 0, width, innerHeight])
         .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
+        */
     
     var clusterLayout = d3.cluster().size([width - paddingLeft * 2, innerHeight]);
   
