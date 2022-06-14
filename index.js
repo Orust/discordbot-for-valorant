@@ -5,7 +5,20 @@ const { PythonShell } = require('python-shell');
 // const pd = require('node-pandas');
 // const scipy = require('scipy');
 const { agnes } = require('ml-hclust');
+const { JSDOM } = require('jsdom');
 const d3 = require('d3');
+
+const document = new JSDOM().window.document;
+const body = d3.select(document.body)
+    .append('svg')
+    .attr('width', 300)
+    .attr('height', 300)
+    .append('circle')
+    .attr('cx', 150)
+    .attr('cy', 150)
+    .attr('r', 100)
+    .attr('fill', '#ff0000');
+console.log(document.body.innerHTML);
 // import * as d3 from 'd3';
 // const d3 = await import("d3");
 // import * as d3 from "https://cdn.skypack.dev/d3@7";
