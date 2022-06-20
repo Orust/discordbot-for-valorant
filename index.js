@@ -8,7 +8,7 @@ const { agnes } = require('ml-hclust');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
-const document = new JSDOM().window.document;
+
 
 // import * as d3 from 'd3';
 // const d3 = await import("d3");
@@ -91,6 +91,8 @@ function dendrogram(data, options = {}) {
         fontSize: fontSize = 10,
         strokeWidth: strokeWidth = 1
     } = options;
+
+    const document = new JSDOM().window.document;
   
     const svg = d3
         .create("svg")
