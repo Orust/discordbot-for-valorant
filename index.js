@@ -234,9 +234,9 @@ client.once("ready", async () => {
             },
             {
                 name: "tag",
-                description: "Valorantのゲーム内TAG(#の後ろの数字)を入力してください。",
+                description: "Valorantのゲーム内TAG(#の後ろだけ)を入力してください。",
                 required: true,
-                type: DiscordJS.Constants.ApplicationCommandOptionTypes.INTEGER
+                type: DiscordJS.Constants.ApplicationCommandOptionTypes.STRING
             }
         ]
     }];
