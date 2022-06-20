@@ -255,7 +255,7 @@ client.on("interactionCreate", async (interaction) => {
 
     if (interaction.commandName === 'search') {
         const name = options.getString('name');
-        const tag = options.getInteger('tag');
+        const tag = options.getString('tag');
         const id = name + '#' + tag;
         // const stats = await runpyshell(id);
         // const agents = stats[0];
@@ -317,7 +317,8 @@ client.on("interactionCreate", async (interaction) => {
             [1, 0.57, 1, 1, 0.7, 0.79, 0.94, 1, 0.69, 0],
         ];
         
-        dendrogram(testdata, { h: 2.5 });
+        const dend = dendrogram(testdata, { h: 2.5 });
+        console.log(typeof(dend));
         
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
@@ -333,7 +334,7 @@ client.on("interactionCreate", async (interaction) => {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/AfFp7pu.png')
+            .setImage('test.png')
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
