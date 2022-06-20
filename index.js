@@ -320,9 +320,6 @@ client.on("interactionCreate", async (interaction) => {
         const dend = dendrogram(testdata, { h: 2.5 });
         console.log(typeof(dend)); // object
         
-        const attachment = new DiscordJS
-                      .MessageAttachment('./test.png', 'test.png');
-        
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Some title')
@@ -337,8 +334,7 @@ client.on("interactionCreate", async (interaction) => {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .attachFiles(attachment)
-            .setImage('attachment://test.png')
+            .setImage('https://i.imgur.com/AfFp7pu.png')
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
