@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const { PythonShell } = require('python-shell');
 // const pd = require('node-pandas');
 // const scipy = require('scipy');
+const sbgToImg = require("svg-to-img");
 const { agnes } = require('ml-hclust');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
@@ -318,6 +319,8 @@ client.on("interactionCreate", async (interaction) => {
         ];
         
         const dend = dendrogram(testdata, { h: 2.5 });
+        const urldend = URL.createObjectURL(dend);
+        const image = await sbgToImg.from(urldend).toPng();
         console.log(typeof(dend)); // object
         
         const exampleEmbed = new MessageEmbed()
