@@ -319,8 +319,8 @@ client.on("interactionCreate", async (interaction) => {
         ];
         
         const dend = dendrogram(testdata, { h: 2.5 });
-        const urldend = URL.createObjectURL(dend);
-        const image = await sbgToImg.from(urldend).toPng();
+        // const urldend = URL.createObjectURL(dend);
+        const image = await sbgToImg.from(dend).toPng();
         console.log(typeof(dend)); // object
         
         const exampleEmbed = new MessageEmbed()
