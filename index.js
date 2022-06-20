@@ -93,7 +93,6 @@ function dendrogram(data, options = {}) {
     } = options;
   
     const svg = d3
-        .select(document)
         .create("svg")
         .attr("width", width)
         .attr("height", height)
