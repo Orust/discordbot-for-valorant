@@ -232,7 +232,8 @@ function svg2jpeg(svgElement, sucessCallback, errorCallback) {
     canvas.width = 200;
     canvas.height = 200;
     var ctx = canvas.getContext('2d');
-    var image = new Image;
+    // var image = new Image;
+    const image = global.document.getElementById("image-container").appendChild(img);
     
     image.onload = () => {
       // SVGデータをPNG形式に変換する
