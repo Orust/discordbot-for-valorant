@@ -230,7 +230,7 @@ function svg2jpeg(svgElement, sucessCallback, errorCallback) {
     // canvas.width = svgElement.width.baseVal.value;
     // canvas.height = svgElement.height.baseVal.value;
     canvas.width = 200;
-    canvas.width = 200;
+    canvas.height = 200;
     var ctx = canvas.getContext('2d');
     var image = new Image;
     
