@@ -220,6 +220,7 @@ function dendrogram(data, options = {}) {
         );
     }
   
+    console.log(svg);
     return svg.node();
 }
 
