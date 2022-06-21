@@ -247,6 +247,7 @@ function svg2jpeg(svgElement, sucessCallback, errorCallback) {
     var svgData = new xmlserializer.serializeToString(svgElement);
     // this.damageMap.nativeElement
     image.src = 'data:image/svg+xml;charset=utf-8;base64,' + btoa(svgData);
+    return image.src;
 }
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
