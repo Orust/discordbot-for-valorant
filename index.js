@@ -5,6 +5,8 @@ const { PythonShell } = require('python-shell');
 // const pd = require('node-pandas');
 // const scipy = require('scipy');
 const svgToImg = require("svg-to-img");
+const canvas = require("canvas");
+const image = canvas.Image;
 const { agnes } = require('ml-hclust');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
@@ -216,7 +218,7 @@ function dendrogram(data, options = {}) {
         );
     }
   
-    return svg.node();
+    return svg;
 }
 
 
