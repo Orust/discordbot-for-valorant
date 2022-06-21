@@ -220,7 +220,7 @@ function dendrogram(data, options = {}) {
         );
     }
   
-    return svg.node();
+    return svg;
 }
 
 
@@ -322,11 +322,13 @@ client.on("interactionCreate", async (interaction) => {
             [1, 0.57, 1, 1, 0.7, 0.79, 0.94, 1, 0.69, 0],
         ];
         
+        
         const svg = dendrogram(testdata, { h: 2.5 });
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
-        fs.writeFileSync('out.svg', body.html());
+        
+        // fs.writeFileSync('out.svg', body.html());
 
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
