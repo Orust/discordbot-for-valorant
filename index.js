@@ -354,13 +354,16 @@ client.on("interactionCreate", async (interaction) => {
         console.log(svgElement); // object
         console.log(global.document);
 
-        svg2jpeg(svgElement, function(data) {
+        const jpeg = svg2jpeg(svgElement, function(data) {
             // data: JPEGのbase64形式データ（文字列）
             console.log(data);
         }, function(error) {
             // error: 何らかのエラーオブジェクト
             console.log(error);  
         })
+
+        console.log(jpeg);
+
         
 
         
