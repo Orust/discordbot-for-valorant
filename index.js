@@ -227,8 +227,10 @@ function dendrogram(data, options = {}) {
 
 function svg2jpeg(svgElement, sucessCallback, errorCallback) {
     var canvas = global.document.createElement('canvas');
-    canvas.width = svgElement.width.baseVal.value;
-    canvas.height = svgElement.height.baseVal.value;
+    // canvas.width = svgElement.width.baseVal.value;
+    // canvas.height = svgElement.height.baseVal.value;
+    canvas.width = 200;
+    canvas.width = 200;
     var ctx = canvas.getContext('2d');
     var image = new Image;
     
