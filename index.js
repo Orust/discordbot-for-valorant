@@ -330,7 +330,7 @@ client.on("interactionCreate", async (interaction) => {
         
         fs.writeFileSync('out.svg', body.html(), (err) => {
             if (err) throw err;
-            console.log('正常に書き込みが完了しました');
+            console.log('writing work correctly');
         });
 
         const exampleEmbed = new MessageEmbed()
