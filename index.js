@@ -12,6 +12,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
 const fs = require('fs');
+const xmlserializer = require('xmlserializer');
 
 global.document = new JSDOM().window.document;
 const body = d3.select(document.querySelector("body"));
