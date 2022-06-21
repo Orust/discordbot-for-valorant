@@ -225,6 +225,25 @@ function dendrogram(data, options = {}) {
     return svg.node();
 }
 
+function svg2jpeg(svgElement, sucessCallback, errorCallback) {
+    var canvas = document.createElement('canvas');
+    canvas.width = svgElement.width.baseVal.value;
+    canvas.height = svgElement.height.baseVal.value;
+    var ctx = canvas.getContext('2d');
+    var image = new Image;
+    
+    image.onload = () => {
+      // SVGデータをPNG形式に変換する
+      ctx.drawImage(image, 0, 0, image.width, image.height);
+      sucessCallback(canvas.toDataURL());
+    };
+    image.onerror = (e) => {
+      errorCallback(e);
+    };
+    // SVGデータを取り出す
+    var svgData = new XMLSerializer().serializeToString(this.damageMap.nativeElement);
+    image.src = 'data:image/svg+xml;charset=utf-8;base64,' + btoa(svgData);
+}
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -325,11 +344,18 @@ client.on("interactionCreate", async (interaction) => {
         ];
         
         
-        const svg = dendrogram(testdata, { h: 0.5 });
+        const svgElement = dendrogram(testdata, { h: 0.5 });
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
         console.log(global.document);
+
+        svg2jpeg(svgElement, function(data) {
+            // data: JPEGのbase64形式データ（文字列）
+        }, function(error) {
+            // error: 何らかのエラーオブジェクト  
+        })
+
         
         /*
         fs.writeFileSync('out.svg', body.html(), (err) => {
