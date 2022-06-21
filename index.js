@@ -12,7 +12,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
 const fs = require('fs');
-console.log(global.document);
+
 global.document = new JSDOM().window.document;
 const body = d3.select(document.querySelector("body"));
 
@@ -329,6 +329,7 @@ client.on("interactionCreate", async (interaction) => {
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
+        console.log(global.document);
         
         /*
         fs.writeFileSync('out.svg', body.html(), (err) => {
