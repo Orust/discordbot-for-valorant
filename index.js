@@ -244,7 +244,8 @@ function svg2jpeg(svgElement, sucessCallback, errorCallback) {
       errorCallback(e);
     };
     // SVGデータを取り出す
-    var svgData = new xmlserializer.serializeToString(this.damageMap.nativeElement);
+    var svgData = new xmlserializer.serializeToString(svgElement);
+    // this.damageMap.nativeElement
     image.src = 'data:image/svg+xml;charset=utf-8;base64,' + btoa(svgData);
 }
 
