@@ -12,7 +12,7 @@ const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
 const fs = require('fs');
-console.log(gloval.dovument);
+console.log(global.document);
 global.document = new JSDOM().window.document;
 const body = d3.select(document.querySelector("body"));
 
@@ -330,10 +330,12 @@ client.on("interactionCreate", async (interaction) => {
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
         
-        fs.writeFileSync('/out.svg', body.html(), (err) => {
+        /*
+        fs.writeFileSync('out.svg', body.html(), (err) => {
             if (err) throw err;
             console.log('writing work correctly');
         });
+        */
 
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
