@@ -358,7 +358,8 @@ client.on("interactionCreate", async (interaction) => {
             // data: JPEGのbase64形式データ（文字列）
             console.log(data);
         }, function(error) {
-            // error: 何らかのエラーオブジェクト  
+            // error: 何らかのエラーオブジェクト
+            console.log(error);  
         })
         
 
