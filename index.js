@@ -347,7 +347,7 @@ client.on("interactionCreate", async (interaction) => {
         const svgElement = dendrogram(testdata, { h: 0.5 });
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
-        console.log(svg); // object
+        console.log(svgElement); // object
         console.log(global.document);
 
         svg2jpeg(svgElement, function(data) {
