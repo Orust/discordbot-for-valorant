@@ -329,7 +329,7 @@ client.on("interactionCreate", async (interaction) => {
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
         
-        fs.writeFileSync('out.svg', body.html(), (err) => {
+        fs.writeFileSync('/out.svg', body.html(), (err) => {
             if (err) throw err;
             console.log('writing work correctly');
         });
