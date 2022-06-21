@@ -220,7 +220,7 @@ function dendrogram(data, options = {}) {
         );
     }
   
-    return svg;
+    return svg.node();
 }
 
 
@@ -323,12 +323,15 @@ client.on("interactionCreate", async (interaction) => {
         ];
         
         
-        const svg = dendrogram(testdata, { h: 2.5 });
+        const svg = dendrogram(testdata, { h: 0.5 });
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
         
-        // fs.writeFileSync('out.svg', body.html());
+        fs.writeFileSync('out.svg', body.html(), (err) => {
+            if (err) throw err;
+            console.log('正常に書き込みが完了しました');
+        });
 
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
