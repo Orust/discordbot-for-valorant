@@ -11,7 +11,9 @@ const { agnes } = require('ml-hclust');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
+const fs = require('fs');
 global.document = new JSDOM().window.document;
+const body = d3.select(document.querySelector("body"));
 
 // import * as d3 from 'd3';
 // const d3 = await import("d3");
@@ -218,7 +220,7 @@ function dendrogram(data, options = {}) {
         );
     }
   
-    return svg;
+    return svg.node();
 }
 
 
@@ -322,9 +324,10 @@ client.on("interactionCreate", async (interaction) => {
         
         const svg = dendrogram(testdata, { h: 2.5 });
         // const urldend = URL.createObjectURL(dend);
-        const image = await svgToImg.from(svg).toPng();
+        // const image = await svgToImg.from(svg).toPng();
         console.log(svg); // object
-        
+        fs.writeFileSync('out.svg', body.html());
+
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Some title')
