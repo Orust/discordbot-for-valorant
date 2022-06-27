@@ -369,6 +369,10 @@ client.on("interactionCreate", async (interaction) => {
 
         console.log(jpeg);
 
+
+        const browser = await puppeteer.launch({
+            executablePath: '/usr/bin/chromium-browser'
+        })
         const testname = 'tn';
 
         const outputBuffer = await svg2png({
@@ -424,7 +428,7 @@ client.on("interactionCreate", async (interaction) => {
             </head>
             <body>
                 <div class="app">
-                
+                <img src="https://avatars.dicebear.com/4.5/api/avataaars/${testname}.svg" />
 
                 <h4>Welcome ${testname}</h4>
                 </div>
