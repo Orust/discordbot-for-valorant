@@ -372,11 +372,13 @@ client.on("interactionCreate", async (interaction) => {
         console.log(jpeg);
 
 
-        /*
+        
         const browser = await puppeteer.launch({
-            executablePath: '/usr/bin/chromium-browser'
+            // executablePath: '/usr/bin/chromium-browser'
+            headless:false,
+            args: ["--no-sandbox"]
         })
-        */
+        
         const testname = 'tn';
 
         const outputBuffer = await svg2png({
