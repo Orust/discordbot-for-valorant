@@ -30,6 +30,7 @@
     "node-pandas": "^1.0.5",
     "python-shell": "^3.0.1",
     "scipy": "^0.1.4",
+    "svg-png-converter": "^0.0.9",
     "svg-to-img": "^2.0.9",
     "xmlserializer": "^0.6.1"
   }
