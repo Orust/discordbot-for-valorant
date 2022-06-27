@@ -383,7 +383,7 @@ client.on("interactionCreate", async (interaction) => {
             format: 'png',
             quality: 1
         })
-        interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${tn}.png'));
+        interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
         
         /*
         fs.writeFileSync('out.svg', body.html(), (err) => {
