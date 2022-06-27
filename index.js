@@ -424,7 +424,7 @@ client.on("interactionCreate", async (interaction) => {
             </head>
             <body>
                 <div class="app">
-                <img src="https://avatars.dicebear.com/4.5/api/avataaars/${testname}.svg" />
+                
 
                 <h4>Welcome ${testname}</h4>
                 </div>
