@@ -382,7 +382,6 @@ client.on("interactionCreate", async (interaction) => {
         
         const testname = 'tn';
 
-        /*
         const outputBuffer = await svg2png({
             input:
             `
@@ -398,9 +397,11 @@ client.on("interactionCreate", async (interaction) => {
             format: 'png',
             quality: 1
         })
+        console.log('outputbuffer : ', outputBuffer);
         interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
-        */
+        
 
+        /*
         const _htmlTemplate = `<!DOCTYPE html>
         <html lang="en">
             <head>
@@ -457,6 +458,7 @@ client.on("interactionCreate", async (interaction) => {
 
         interaction.channel.send(new MessageAttachment(images, `${testname}.jpeg`))
 
+        */
 
         /*
         fs.writeFileSync('out.svg', body.html(), (err) => {
