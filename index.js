@@ -14,7 +14,7 @@ const d3 = require('d3');
 const fs = require('fs');
 const xmlserializer = require('xmlserializer');
 
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 
 global.document = new JSDOM().window.document;
 const body = d3.select(document.querySelector("body"));
@@ -372,15 +372,17 @@ client.on("interactionCreate", async (interaction) => {
         console.log(jpeg);
 
 
-        
+        /*
         const browser = await puppeteer.launch({
             // executablePath: '/usr/bin/chromium-browser'
             headless:false,
             args: ["--no-sandbox"]
         })
+        */
         
         const testname = 'tn';
 
+        /*
         const outputBuffer = await svg2png({
             input:
             `
@@ -397,7 +399,8 @@ client.on("interactionCreate", async (interaction) => {
             quality: 1
         })
         interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
-        
+        */
+
         const _htmlTemplate = `<!DOCTYPE html>
         <html lang="en">
             <head>
