@@ -8,6 +8,7 @@ const svgToImg = require("svg-to-img");
 const canvas = require("canvas");
 const image = canvas.Image;
 const { agnes } = require('ml-hclust');
+const { distance } = require('ml-distance');
 const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const d3 = require('d3');
@@ -353,9 +354,14 @@ client.on("interactionCreate", async (interaction) => {
             [1, 0.25, 1, 1, 0.79, 0.67, 0.94, 1, 0, 0.69],
             [1, 0.57, 1, 1, 0.7, 0.79, 0.94, 1, 0.69, 0],
         ];
+
+        // dist_mat = dist(asMatrix(testdata), distance.euclidean);
+        const hclust_avg = new agnes(testdata, {
+            method: "ward",
+            isDistanceMatrix: true
+        })
         
-        
-        const svgElement = dendrogram(testdata, { h: 0.5 });
+        const svgElement = dendrogram(hclust_avg, { h: 0.5 });
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svgElement); // object
