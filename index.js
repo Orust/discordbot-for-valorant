@@ -661,8 +661,10 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: true
         });
         */
-        const attachment = new MessageAttachment(outputBuffer)
-        await interaction.reply(attachment);
+        const attachment = new MessageAttachment(outputBuffer, "./test.png");
+        await interaction.reply("image", {
+            embeds: [new MessageEmbed({ title: "test", files: [attachment]})]
+        });
     }
 });
 
