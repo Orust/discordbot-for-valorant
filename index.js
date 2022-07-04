@@ -18,7 +18,7 @@ const xmlserializer = require('xmlserializer');
 // const puppeteer = require('puppeteer');
 
 global.document = new JSDOM().window.document;
-const { document } = new JSDOM().window.document;
+// const { document } = new JSDOM().window.document;
 console.log(global.document);
 console.log(document);
 const body = d3.select(document.querySelector("body"));
