@@ -651,7 +651,7 @@ client.on("interactionCreate", async (interaction) => {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage('https://i.imgur.com/AfFp7pu.png')
+            .setImage(attachment)
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
