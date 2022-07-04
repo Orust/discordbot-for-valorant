@@ -635,7 +635,7 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
 
-        const attachment = new MessageAttachment(outputBuffer, "./test.png");
+        const attachment = new MessageAttachment(outputBuffer);
 
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
@@ -651,7 +651,7 @@ client.on("interactionCreate", async (interaction) => {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage(attachment)
+            .setImage('https://i.imgur.com/AfFp7pu.png')
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
