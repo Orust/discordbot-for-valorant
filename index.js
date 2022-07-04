@@ -506,7 +506,7 @@ client.on("interactionCreate", async (interaction) => {
         
         // dist_mat = dist(asMatrix(testdata), distance.euclidean);
         const hclust_avg = new agnes(testdata, {
-            method: "average",
+            method: "ward",
             isDistanceMatrix: true
         })
         console.log(hclust_avg);
@@ -655,7 +655,8 @@ client.on("interactionCreate", async (interaction) => {
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-        interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
+        // koko
+        interaction.channel.send({ files: [attachment] });
         
 
         /*
