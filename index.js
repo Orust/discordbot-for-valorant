@@ -661,13 +661,15 @@ client.on("interactionCreate", async (interaction) => {
             ephemeral: true
         });
         */
-        /*
+        
         const attachment = new MessageAttachment(outputBuffer, "./test.png");
+        /*
         await interaction.reply("image", {
             embeds: [new MessageEmbed({ title: "test", files: ["test.png"]})]
         });
         */
         
+        interaction.channel.send({ embeds: [attachment] });
         await interaction.reply("image", { files: ["./test.png"] });
     }
 });
