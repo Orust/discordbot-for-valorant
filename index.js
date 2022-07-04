@@ -18,6 +18,7 @@ const xmlserializer = require('xmlserializer');
 // const puppeteer = require('puppeteer');
 
 global.document = new JSDOM().window.document;
+console.log(global.document);
 const body = d3.select(document.querySelector("body"));
 
 // import * as d3 from 'd3';
@@ -116,6 +117,7 @@ function dendrogram(data, options = {}) {
     var clusterLayout = d3.cluster().size([width - paddingLeft * 2, innerHeight]);
   
     const root = d3.hierarchy(data);
+    console.log("root : ", root);
     const maxHeight = root.data.height;
   
     const yScaleLinear = d3
@@ -228,6 +230,7 @@ function dendrogram(data, options = {}) {
         transformY(d.target)
       );
     }
+    console.log("svg.node() : ", svg.node());
   
     return svg.node();
 }
