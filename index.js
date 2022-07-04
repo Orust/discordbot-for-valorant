@@ -35,6 +35,7 @@ const { getFirestore, Timestamp, FieldValue } = require('firebase-admin/firestor
 var admin = require("firebase-admin");
 
 var serviceAccount = require("/app/discord-valorant-matching-firebase-adminsdk-9gsja-02db5924bd.json");
+const { hcl } = require('d3');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -355,11 +356,13 @@ client.on("interactionCreate", async (interaction) => {
             [1, 0.57, 1, 1, 0.7, 0.79, 0.94, 1, 0.69, 0],
         ];
 
+        
         // dist_mat = dist(asMatrix(testdata), distance.euclidean);
         const hclust_avg = new agnes(testdata, {
-            method: "ward",
+            method: "average",
             isDistanceMatrix: true
         })
+        console.log(hclust_avg);
         
         const svgElement = dendrogram(hclust_avg, { h: 0.5 });
         // const urldend = URL.createObjectURL(dend);
