@@ -563,7 +563,7 @@ client.on("interactionCreate", async (interaction) => {
             quality: 1
         })
         console.log('outputbuffer : ', outputBuffer);
-        interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, 'test.png'));
+        interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer));
         // interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
         
 
