@@ -656,7 +656,7 @@ client.on("interactionCreate", async (interaction) => {
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
         // koko
-        interaction.channel.send({ files: [attachment] });
+        interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
         
 
         /*
@@ -673,7 +673,7 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
         
-        interaction.channel.send({ embeds: [attachment] });
+        // interaction.channel.send({ embeds: [attachment] });
         await interaction.reply("image", { files: ["./test.png"] });
     }
 });
