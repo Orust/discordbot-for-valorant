@@ -633,7 +633,8 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
 
-        /*
+        const attachment = new MessageAttachment(outputBuffer, "./test.png");
+
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Some title')
@@ -652,8 +653,8 @@ client.on("interactionCreate", async (interaction) => {
             .setTimestamp()
             .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-        interaction.channel.send({ embeds: [exampleEmbed] });
-        */
+        interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
+        
 
         /*
         await interaction.reply({
@@ -662,7 +663,7 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
         
-        const attachment = new MessageAttachment(outputBuffer, "./test.png");
+        
         /*
         await interaction.reply("image", {
             embeds: [new MessageEmbed({ title: "test", files: ["test.png"]})]
