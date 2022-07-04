@@ -18,7 +18,9 @@ const xmlserializer = require('xmlserializer');
 // const puppeteer = require('puppeteer');
 
 global.document = new JSDOM().window.document;
+const { document } = new JSDOM().window.document;
 console.log(global.document);
+console.log(document);
 const body = d3.select(document.querySelector("body"));
 
 // import * as d3 from 'd3';
@@ -231,9 +233,8 @@ function dendrogram(data, options = {}) {
       );
     }
     console.log("svg.node() : ", svg.node());
-    console.log("svg : ", svg);
   
-    return svg;
+    return svg.node();
 }
 function dendrogram0(data, options = {}) {
     const {
@@ -510,12 +511,17 @@ client.on("interactionCreate", async (interaction) => {
         })
         console.log(hclust_avg);
         
+        const s = new XMLSerializer();
+        const str = s.serializeToString(dendrogram(hclust_avg));
+        console.log("str : ", str);
+        
         const svgElement = dendrogram(hclust_avg);
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
         console.log(svgElement); // object
         console.log(global.document);
 
+        /*
         const jpeg = svg2jpeg(svgElement, function(data) {
             // data: JPEGのbase64形式データ（文字列）
             console.log(data);
@@ -525,6 +531,7 @@ client.on("interactionCreate", async (interaction) => {
         })
 
         console.log(jpeg);
+        */
 
 
         /*
