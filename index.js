@@ -451,6 +451,8 @@ client.on("interactionCreate", async (interaction) => {
         const time = stats[1];
         // const agents = ["a", "b", "c"];
         // const time = [3, 2, 5];
+
+        console.log('stats:' + agents + "," + time);
         
         //#region for debug python
         /*
