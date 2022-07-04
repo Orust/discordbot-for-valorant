@@ -511,9 +511,12 @@ client.on("interactionCreate", async (interaction) => {
         })
         console.log(hclust_avg);
         
-        const s = new XMLSerializer();
-        const str = s.serializeToString(dendrogram(hclust_avg));
-        console.log("str : ", str);
+        // const s = new XMLSerializer();
+        const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg));
+        console.log("str_dend : ", str_dend);
+        
+        const str_dom = xmlserializer.serializeToString(document);
+        console.log("str_dom : ", str_dom);
         
         const svgElement = dendrogram(hclust_avg);
         // const urldend = URL.createObjectURL(dend);
