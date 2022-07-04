@@ -231,8 +231,9 @@ function dendrogram(data, options = {}) {
       );
     }
     console.log("svg.node() : ", svg.node());
+    console.log("svg : ", svg);
   
-    return svg.node();
+    return svg;
 }
 function dendrogram0(data, options = {}) {
     const {
