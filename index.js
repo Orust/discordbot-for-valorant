@@ -563,7 +563,7 @@ client.on("interactionCreate", async (interaction) => {
             quality: 1
         })
         console.log('outputbuffer : ', outputBuffer);
-        interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer));
+        // interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer));
         // interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
         
 
@@ -655,10 +655,14 @@ client.on("interactionCreate", async (interaction) => {
         interaction.channel.send({ embeds: [exampleEmbed] });
         */
 
+        /*
         await interaction.reply({
             content: 'stats:' + agents + time,
             ephemeral: true
         });
+        */
+        const attachment = new MessageAttachment(outputBuffer)
+        await interaction.reply(attachment);
     }
 });
 
