@@ -443,11 +443,14 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getString('tag');
         const id = name + '#' + tag;
-        // const stats = await runpyshell(id);
-        // const agents = stats[0];
-        // const time = stats[1];
-        const agents = ["a", "b", "c"];
-        const time = [3, 2, 5];
+
+        // search stats in trn by python
+
+        const stats = await runpyshell(id);
+        const agents = stats[0];
+        const time = stats[1];
+        // const agents = ["a", "b", "c"];
+        // const time = [3, 2, 5];
         
         //#region for debug python
         /*
