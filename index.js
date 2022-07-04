@@ -548,7 +548,8 @@ client.on("interactionCreate", async (interaction) => {
         const testname = 'tn';
 
         const outputBuffer = await svg2png({
-            input:
+            input: str_dend,
+            /*
             `
                 <svg xmlns="http://www.w3.org/2000/svg" width="350" height="136" viewBox="0 0 350 136">
                     <g id="template" transform="translate(-208 -209)">
@@ -558,6 +559,7 @@ client.on("interactionCreate", async (interaction) => {
                     </g>
                 </svg>
             `,
+            */
             encoding: 'buffer',
             format: 'png',
             quality: 1
