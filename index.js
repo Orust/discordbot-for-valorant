@@ -524,7 +524,7 @@ client.on("interactionCreate", async (interaction) => {
 
         
         // const s = new XMLSerializer();
-        const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg), { h: 1.2 });
+        const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg, { h: 1.2 }));
         console.log("str_dend : ", str_dend);
         
         const str_dom = xmlserializer.serializeToString(document);
