@@ -446,11 +446,14 @@ client.on("interactionCreate", async (interaction) => {
 
         // search stats in trn by python
 
+        /*
         const stats = await runpyshell(id);
         const agents = stats[0];
         const time = stats[1];
-        // const agents = ["a", "b", "c"];
-        // const time = [3, 2, 5];
+        */
+
+        const agents = ["a", "b", "c"];
+        const time = [3, 2, 5];
 
         console.log('stats:' + agents + "," + time);
         
@@ -515,19 +518,23 @@ client.on("interactionCreate", async (interaction) => {
             isDistanceMatrix: true
         })
         console.log(hclust_avg);
+
+
+
+
         
         // const s = new XMLSerializer();
-        const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg));
+        const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg), { h: 1.2 });
         console.log("str_dend : ", str_dend);
         
         const str_dom = xmlserializer.serializeToString(document);
         console.log("str_dom : ", str_dom);
         
-        const svgElement = dendrogram(hclust_avg);
+        // const svgElement = dendrogram(hclust_avg);
         // const urldend = URL.createObjectURL(dend);
         // const image = await svgToImg.from(svg).toPng();
-        console.log(svgElement); // object
-        console.log(global.document);
+        // console.log(svgElement); // object
+        // console.log(global.document);
 
         /*
         const jpeg = svg2jpeg(svgElement, function(data) {
