@@ -33,6 +33,7 @@
     "python-shell": "^3.0.1",
     "svg-png-converter": "^0.0.9",
     "svg-to-img": "^2.0.9",
+    "unofficial-valorant-api": "^2.1.1-beta.3",
     "xmlserializer": "^0.6.1"
   }
 }

@@ -14,6 +14,8 @@ const { JSDOM } = jsdom;
 const d3 = require('d3');
 const fs = require('fs');
 const xmlserializer = require('xmlserializer');
+const { HenrikDevValorantAPI } = require('unofficial-valorant-api');
+const VAPI = new HenrikDevValorantAPI();
 
 // const puppeteer = require('puppeteer');
 
@@ -443,6 +445,9 @@ client.on("interactionCreate", async (interaction) => {
         const name = options.getString('name');
         const tag = options.getString('tag');
         const id = name + '#' + tag;
+
+        const account = await VAPI.getAccount({name, tag});
+        console.log(account);
 
         // search stats in trn by python
 
