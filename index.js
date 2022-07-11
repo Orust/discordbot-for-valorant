@@ -14,7 +14,7 @@ const { JSDOM } = jsdom;
 const d3 = require('d3');
 const fs = require('fs');
 const xmlserializer = require('xmlserializer');
-const { HenrikDevValorantAPI } = require('unofficial-valorant-api');
+const HenrikDevValorantAPI = require('unofficial-valorant-api');
 const VAPI = new HenrikDevValorantAPI();
 
 // const puppeteer = require('puppeteer');
