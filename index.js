@@ -449,6 +449,14 @@ client.on("interactionCreate", async (interaction) => {
         const account = await VAPI.getAccount({name, tag});
         console.log(account);
 
+        const matches = await VAPI.getMatches({
+            region: 'ap',
+            name: name,
+            tag: tag
+        });
+
+        console.log(matches);
+
         // search stats in trn by python
 
         /*
