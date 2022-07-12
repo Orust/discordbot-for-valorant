@@ -454,7 +454,7 @@ client.on("interactionCreate", async (interaction) => {
             name: name,
             tag: tag,
             size: 2,
-            filter: competitive
+            filter: "competitive"
         });
 
         console.log(matches);
