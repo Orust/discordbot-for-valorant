@@ -453,14 +453,14 @@ client.on("interactionCreate", async (interaction) => {
             region: 'ap',
             name: name,
             tag: tag,
-            size: 2,
+            size: 20,
             filter: "competitive"
         });
 
         console.log(matches);
         console.log("type: ", typeof(matches));
-        // console.log(matches.data.players.all_players.name);
-        console.log(matches["data"][0]["players"]);
+        
+        // console.log(matches["data"][0]["players"]);
         // [all_players][0]
 
         
