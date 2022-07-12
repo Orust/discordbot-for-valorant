@@ -452,13 +452,15 @@ client.on("interactionCreate", async (interaction) => {
         const matches = await VAPI.getMatches({
             region: 'ap',
             name: name,
-            tag: tag
+            tag: tag,
+            size: 2,
+            filter: competitive
         });
 
         console.log(matches);
+        console.log("type: ", typeof(matches));
 
-        const parsedMatches = JSON.parse(matches);
-        console.log(parsedMatches);
+        
 
         // search stats in trn by python
 
