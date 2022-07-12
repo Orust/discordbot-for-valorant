@@ -530,7 +530,7 @@ client.on("interactionCreate", async (interaction) => {
             method: "ward",
             isDistanceMatrix: true
         })
-        console.log(hclust_avg);
+        // console.log(hclust_avg);
 
 
 
@@ -538,10 +538,10 @@ client.on("interactionCreate", async (interaction) => {
         
         // const s = new XMLSerializer();
         const str_dend = xmlserializer.serializeToString(dendrogram(hclust_avg, { h: 1.2 }));
-        console.log("str_dend : ", str_dend);
+        // console.log("str_dend : ", str_dend);
         
-        const str_dom = xmlserializer.serializeToString(document);
-        console.log("str_dom : ", str_dom);
+        // const str_dom = xmlserializer.serializeToString(document);
+        // console.log("str_dom : ", str_dom);
         
         // const svgElement = dendrogram(hclust_avg);
         // const urldend = URL.createObjectURL(dend);
@@ -589,7 +589,7 @@ client.on("interactionCreate", async (interaction) => {
             format: 'png',
             quality: 1
         })
-        console.log('outputbuffer : ', outputBuffer);
+        // console.log('outputbuffer : ', outputBuffer);
         // interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer));
         // interaction.channel.send(`This is a test:`, new MessageAttachment(outputBuffer, '${testname}.png'));
         
