@@ -453,7 +453,7 @@ client.on("interactionCreate", async (interaction) => {
             region: 'ap',
             name: name,
             tag: tag,
-            size: 20,
+            size: 50,
             filter: "competitive"
         });
 
