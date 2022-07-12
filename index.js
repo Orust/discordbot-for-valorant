@@ -459,6 +459,7 @@ client.on("interactionCreate", async (interaction) => {
 
         console.log(matches);
         console.log("type: ", typeof(matches));
+        console.log(matches.data.players.all_players.name);
 
         
 
