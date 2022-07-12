@@ -457,6 +457,9 @@ client.on("interactionCreate", async (interaction) => {
 
         console.log(matches);
 
+        const parsedMatches = JSON.parse(matches);
+        console.log(parsedMatches);
+
         // search stats in trn by python
 
         /*
@@ -699,7 +702,8 @@ client.on("interactionCreate", async (interaction) => {
         */
         
         // interaction.channel.send({ embeds: [attachment] });
-        await interaction.reply("image", { files: ["./test.png"] });
+        // await interaction.reply("image", { files: ["./test.png"] });
+        await interaction.reply("interaction reply");
     }
 });
 
