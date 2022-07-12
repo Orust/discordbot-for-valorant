@@ -460,7 +460,8 @@ client.on("interactionCreate", async (interaction) => {
         console.log(matches);
         console.log("type: ", typeof(matches));
         // console.log(matches.data.players.all_players.name);
-        console.log(matches[data][1][players][all_players][0]);
+        console.log(matches[data][1][players]);
+        // [all_players][0]
 
         
 
