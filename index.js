@@ -557,17 +557,7 @@ client.on("interactionCreate", async (interaction) => {
         // console.log(svgElement); // object
         // console.log(global.document);
 
-        /*
-        const jpeg = svg2jpeg(svgElement, function(data) {
-            // data: JPEGのbase64形式データ（文字列）
-            console.log(data);
-        }, function(error) {
-            // error: 何らかのエラーオブジェクト
-            console.log(error);  
-        })
-
-        console.log(jpeg);
-        */
+        
 
 
         /*
@@ -689,27 +679,27 @@ client.on("interactionCreate", async (interaction) => {
             // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
         // koko
+        /*
         await interaction.reply({
             embeds: [exampleEmbed],
             files: [
                 attachment
             ]
         });
+        */
         interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
         
         
 
-        /*
+        
         await interaction.reply({
             content: 'stats:' + agents + time,
             ephemeral: true
-        });
-        */
-        
+        });  
         
         /*
         await interaction.reply("image", {
-            embeds: [new MessageEmbed({ title: "test", files: ["test.png"]})]
+            embeds: [new MessageEmbed({ title: "test", files: [attachment]})]
         });
         */
         
