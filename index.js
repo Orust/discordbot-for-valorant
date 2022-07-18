@@ -442,6 +442,7 @@ client.on("interactionCreate", async (interaction) => {
     const { commandName, options } = interaction;
 
     if (interaction.commandName === 'search') {
+        await interaction.deferReply();
         const name = options.getString('name');
         const tag = options.getString('tag');
         const id = name + '#' + tag;
@@ -688,14 +689,15 @@ client.on("interactionCreate", async (interaction) => {
         });
         */
         interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
-        
+        await interaction.editReply('end edit');
         
 
-        
+        /*
         await interaction.reply({
             content: 'stats:' + agents + time,
             ephemeral: true
-        });  
+        });
+        */  
         
         /*
         await interaction.reply("image", {
