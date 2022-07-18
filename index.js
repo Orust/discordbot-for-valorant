@@ -684,12 +684,19 @@ client.on("interactionCreate", async (interaction) => {
                 { name: 'Inline field title', value: 'Some value here', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
-            .setImage(attachment)
+            // .setImage(attachment)
             .setTimestamp()
             // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
         // koko
+        await interaction.reply({
+            embeds: [exampleEmbed],
+            files: [
+                attachment
+            ]
+        });
         interaction.channel.send({ files: [attachment], embeds: [exampleEmbed] });
+        
         
 
         /*
@@ -708,7 +715,7 @@ client.on("interactionCreate", async (interaction) => {
         
         // interaction.channel.send({ embeds: [attachment] });
         // await interaction.reply("image", { files: ["./test.png"] });
-        await interaction.reply("interaction reply");
+        
     }
 });
 
