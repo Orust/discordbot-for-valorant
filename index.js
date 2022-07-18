@@ -663,18 +663,18 @@ client.on("interactionCreate", async (interaction) => {
 
         const exampleEmbed = new MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Some title')
+            .setTitle('Check compatibility for finding your new friends')
             // .setURL('https://discord.js.org/')
             // .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
-            .setDescription('Some description here')
+            .setDescription('You can see the compatibility with other users. The color of the user name indicates the competitive rank.')
             // .setThumbnail('https://i.imgur.com/AfFp7pu.png')
             .addFields(
                 { name: 'Regular field title', value: 'Some value here' },
                 { name: '\u200B', value: '\u200B' },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
+                { name: 'user1', value: 'Some value here', inline: true },
+                { name: 'user2', value: 'Some value here', inline: true },
             )
-            .addField('Inline field title', 'Some value here', true)
+            .addField('user3', 'Some value here', true)
             // .setImage(attachment)
             .setTimestamp()
             // .setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
