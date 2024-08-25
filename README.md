@@ -1,9 +1,3 @@
-# バックアップできていなかったことに気づいた
-2022/8-12の実装まるまる失った
-- 貸与PCを返却する時は下手に選ばず全部バックアップとる
-- そもそも逐次で取るなりなんなり
-- LocalでGit管理して満足してた
-
 # discordbot-for-valorant
 This product name is *Compatibility checker*.
 Compatibility checker helps users find other players to play with based on in-game stats, such as character preference and competitive rank. It is implemented as a Discord bot application and used by users who have given consent within the public server. TheThe bot receives the in-game ID with the slash command and retrieves the stats with the API for history of matches. The various parameters obtained by this are clustered and analyzed, and the compatibility between users is visualized by a dendrogram. Based on the visualization result, the user contacts other users on Discord and plays Valorant together.
