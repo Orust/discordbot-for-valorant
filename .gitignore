@@ -1,3 +1,69 @@
+# Node modules
 node_modules/
-/.env
-/discord-valorant-matching-firebase-adminsdk-9gsja-02db5924bd.json
+
+# Environment variables
+.env
+*.env
+
+# Firebase credentials
+*firebase*.json
+discord-valorant-matching-firebase-adminsdk-*.json
+
+# Exclude package files from the json ignore rule
+!package.json
+!package-lock.json
+!Pipfile.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Python package directories
+aiohttp/
+aiohttp-*.dist-info/
+cachecontrol/
+CacheControl-*.dist-info/
+cachetools/
+cachetools-*.dist-info/
+certifi/
+certifi-*.dist-info/
+chardet/
+chardet-*.dist-info/
+filelock-*.dist-info/
+httplib2/
+httplib2-*.dist-info/
+idna/
+idna-*.dist-info/
+pyasn1/
+pyasn1_modules/
+pyasn1*.dist-info/
+requests/
+requests-*.dist-info/
+six-*.dist-info/
+six.py
+urllib3/
+urllib3-*.dist-info/
+
+# Virtual environment
+venv/
+ENV/
+env/
